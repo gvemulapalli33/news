@@ -1,0 +1,15 @@
+.newsArticle {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+    grid-gap: 2rem;
+    width: 100%;
+    grid-column: 2/2;
+    overflow-y: scroll;
+    background: #141527;
+}
+
+@media screen and (max-width: 500px) {
+    .newsArticle {
+        grid-template-columns: 1fr;
+    }
+}
