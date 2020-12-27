@@ -1,19 +1,28 @@
 import React, {useContext, useEffect} from 'react';
 import './App.css';
-import local from '../../data/local';
+import {Route, Switch} from "react-router-dom";
 import Menu from "../Menu/Menu";
 import NewsContainer from "../NewsContainer/NewsContainer";
 import {newsContext} from "../../context/newsContext";
-
+import useFetch from "../../hooks/useFetch";
+const API = 'https://whats-new-api.herokuapp.com/api/v1/news';
 function App() {
-    const {setLocalNews} = useContext(newsContext)
+    const {setAllLatestNews} = useContext(newsContext);
+    const [loading, error, data] = useFetch(API);
     useEffect(() => {
-      setLocalNews(local);
-    }, []);
+      setAllLatestNews(data);
+    }, [data]);
     return (
       <div className="app">
           <Menu />
-          <NewsContainer />
+          <Switch>
+            <Route exact path="/">
+               {data && <NewsContainer />}
+            </Route>
+            <Route path="/:type">
+               {data && <NewsContainer />}
+            </Route>
+          </Switch>
       </div>
     );
 }
