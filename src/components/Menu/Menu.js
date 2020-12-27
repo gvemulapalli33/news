@@ -5,7 +5,7 @@ const categories = ['Local News', 'Technology', 'Entertainment', 'Science', 'Hea
 const icons =['📰', '⚙️', '🎬',  '🚀', '🩺'];
 function Menu() {
     const menuItems = categories.map((category, index) => {
-        return <li><span className="icon">{icons[index]}</span>{category}</li>
+        return <li key={category}><span className="icon">{icons[index]}</span>{category}</li>
     })
     return (
         <ul className="categories">

@@ -3,6 +3,7 @@
     color: #fff;
     font-size: 1.2rem;
     padding: 1rem;
+    grid-column: 1/2;
 }
 
 .categories li {
@@ -18,4 +19,15 @@
 
 .icon {
     margin-right: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+    .menu {
+        display: 'block'
+    }
+    
+    .categories {
+        display: none;
+    }
+
 }

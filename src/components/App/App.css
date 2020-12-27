@@ -5,9 +5,19 @@
 }
 
 .app {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(200px, 300px) 1fr;
   background: #141527;
   height: 100vh;
   text-align: center;
   width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .app {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    width: 100%;
+  }
 }
