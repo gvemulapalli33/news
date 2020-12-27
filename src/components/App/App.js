@@ -1,22 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import local from '../../data/local';
 import './App.css';
+import Menu from "../Menu/Menu";
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      local
-    }
-  }
+function App() {
 
-  render () {
     return (
       <div className="app">
-        YOUR CODE GOES HERE!
+          <Menu />
       </div>
     );
-  }
 }
 
 export default App;
