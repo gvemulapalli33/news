@@ -12,6 +12,11 @@
     text-align: left;
 }
 
+.categories li a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .categories li:hover {
     background-color: #F3B700;
     border-top-right-radius: 50px;
