@@ -7,6 +7,7 @@ function NewsContext(props) {
     let [entertainmentNews, setEntertainmentNews] = useState([]);
     let [scienceNews, setScienceNews] = useState([]);
     let [technologyNews, setTechnologyNews] = useState([]);
+    let [menuElements, setMenuElements] = useState('');
 
     const setAllLatestNews = (news) => {
       const {entertainment, health, local, science, technology} = news;
@@ -18,7 +19,7 @@ function NewsContext(props) {
     }
 
     return(
-      <newsContext.Provider value={{localNews, entertainmentNews, scienceNews, healthNews, technologyNews, setAllLatestNews}}>
+      <newsContext.Provider value={{localNews, entertainmentNews, scienceNews, healthNews, technologyNews, setAllLatestNews, setMenuElements, menuElements}}>
           {props.children}
       </newsContext.Provider>
     );
