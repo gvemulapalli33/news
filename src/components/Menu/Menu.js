@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useRef, useContext} from 'react';
 import './Menu.css';
 import {Link} from "react-router-dom";
+import {newsContext} from "../../context/newsContext";
 
 const categories = ['Local News', 'Technology', 'Entertainment', 'Science', 'Health'];
 const icons = ['📰', '⚙️', '🎬',  '🚀', '🩺'];
 function Menu() {
+    const menu = useRef(null);
+    const {setMenuElements} = useContext(newsContext);
+    setMenuElements(menu.current);
     const menuItems = categories.map((category, index) => {
         let link = category;
         if (link.split(' ').length > 0) {
@@ -19,7 +23,8 @@ function Menu() {
         </li>
     })
     return (
-        <ul className="categories">
+        <ul ref={menu} className="categories">
+          <li className="close">×</li>
           {menuItems}
         </ul>
     );
