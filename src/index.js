@@ -8,8 +8,8 @@ import NewsContext from "./context/newsContext";
 if (process.env.NODE_ENV !== 'production') {
     import('react-axe').then(axe => {
       axe.default(React, ReactDOM, 1000);
-      ReactDOM.render(<Router><NewsContext><App /></NewsContext></Router>, document.getElementById('root'));
+      ReactDOM.render(<Router basename={window.location.pathname || ''}><NewsContext><App /></NewsContext></Router>, document.getElementById('root'));
     });
   } else {
-    ReactDOM.render(<Router><NewsContext><App /></NewsContext></Router>, document.getElementById('root'));
+    ReactDOM.render(<Router basename={window.location.pathname || ''}><NewsContext><App /></NewsContext></Router>, document.getElementById('root'));
   }

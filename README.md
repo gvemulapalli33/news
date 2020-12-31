@@ -1,5 +1,4 @@
 # CurrentNews
-
 Link to published site: https://gvemulapalli33.github.io/news/
 
 ## ScreenShots
